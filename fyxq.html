@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/swiper.css" />
+		<link rel="stylesheet" href="css/basic_style.css" />
+		<link rel="stylesheet" href="css/my_style.css" />
+		<link rel="shortcut icon" href="" />
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/my_js.js"></script>
+		<title>标题</title>
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<div class="container container-tell">
+				<div class="pull-left cc">
+					<span class="city">北京</span>
+					<div class="city-box">
+						<a href="index.html">天津</a>
+						<a href="index.html">河北</a>
+						<a href="index.html">河南</a>
+					</div>
+				</div>
+				<div class="pull-right">
+					<div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container absolute">
+				<a href="index.html" class="pull-left logo">
+					<img src="images/logo.png" />
+				</a>
+				<div class="pull-right">
+					<a href="index.html">首页</a>
+					<a class="active" href="fyxx.html">房源信息</a>
+					<!--<a href="">客娱生活</a>-->
+					<a href="gjfw.html">管家服务</a>
+					<a href="news.html">新闻资讯</a>
+					<a href="about.html">关于我们</a>
+					<div class="form">
+						<form action="">
+							<input type="text" placeholder="请输入搜索的内容" />
+							<button type="submit"></button>
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+
+		<!--栏目一-->
+		<div class="fyxq">
+			<div class="container container-q">
+				<div class="q">
+					<div class="ql">
+						<div class="view">
+							<div class="swiper-container swiper-container1">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/b (1).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (2).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (3).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (4).jpg" />
+									</div>
+								</div>
+								<div class="swiper-button-prev swiper-button-prev1 arrow-left"></div>
+								<div class="swiper-button-next swiper-button-next1 arrow-right"></div>
+							</div>
+						</div>
+						<div class="preview">
+							<div class="swiper-container swiper-container2">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide active-nav">
+										<img src="images/b (1).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (2).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (3).jpg" />
+									</div>
+									<div class="swiper-slide">
+										<img src="images/b (4).jpg" />
+									</div>
+	
+								</div>
+	
+							</div>
+							<div class="btn-a">
+								<div class="swiper-button-prev2 arrow-left"></div>
+								<div class="swiper-button-next2 arrow-right"></div>
+							</div>
+						</div>
+						
+					</div>
+					<script src="js/jquery-3.2.1.min.js"></script>
+					<script src="js/swiper-3.4.2.jquery.min.js"></script>
+			
+					<script>
+						var viewSwiper = new Swiper('.view .swiper-container', {
+							
+							onSlideChangeStart: function() {
+								updateNavPosition()
+							}
+						})
+			
+						$('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
+							e.preventDefault()
+							if(viewSwiper.activeIndex == 0) {
+								viewSwiper.slideTo(viewSwiper.slides.length - 1, 1000);
+								return
+							}
+							viewSwiper.slidePrev()
+						})
+						$('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
+							e.preventDefault()
+							if(viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+								viewSwiper.slideTo(0, 1000);
+								return
+							}
+							viewSwiper.slideNext()
+						})
+			
+						var previewSwiper = new Swiper('.preview .swiper-container', {
+							//visibilityFullFit: true,
+							slidesPerView: 3,
+							allowTouchMove: false,
+							onTap: function() {
+								viewSwiper.slideTo(previewSwiper.clickedIndex)
+							}
+						})
+			
+						function updateNavPosition() {
+							$('.preview .active-nav').removeClass('active-nav')
+							var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+							if(!activeNav.hasClass('swiper-slide-visible')) {
+								if(activeNav.index() > previewSwiper.activeIndex) {
+									var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+									previewSwiper.slideTo(activeNav.index() - thumbsPerNav)
+								} else {
+									previewSwiper.slideTo(activeNav.index())
+								}
+							}
+						}
+					</script>
+
+					<div class="qr">
+						<h1>草房地铁站-像素-次卧</h1>
+						<h2>1589元/月</h2>
+						<div style="height: 180px;">
+							<div class="txt left-txt">
+								<div class="line clearfix"><label>户<span class="mr_28"></span>型</label>
+									<div class="controls">4室1厅1卫</div>
+								</div>
+								<div class="line clearfix"><label>面<span class="mr_28"></span>积</label>
+									<div class="controls">18㎡</div>
+								</div>
+								<div class="line clearfix"><label>装<span class="mr_28"></span>修</label>
+									<div class="controls">毛坯</div>
+								</div>
+								<div class="line clearfix"><label>朝<span class="mr_28"></span>向</label>
+									<div class="controls">南</div>
+								</div>
+								<div class="line clearfix"><label>楼<span class="mr_28"></span>层</label>
+									<div class="controls">11/28层</div>
+								</div>
+
+							</div>
+							<div class="txt right-txt">
+								<div class="line clearfix">
+									<label>租赁方式</label>
+									<div class="controls">合租</div>
+								</div>
+
+								<div class="line clearfix">
+									<label>付款方式</label>
+									<div class="controls">(可面议)</div>
+								</div>
+								<div class="line clearfix"><label>房屋地址</label>
+									<div class="controls">门头沟区-梧桐苑<i class="map-ico" id="map-btn"></i></div>
+								</div>
+								<div class="line clearfix">
+									<label>可入住日期</label>
+									<div class="controls">2018-06-28</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="tell">
+							<img src="images/tel.png" />
+							<div class="tel-box">
+								<h1>租房热线<span>09:00-18:00</span></h1>
+								<p>010-60534862 010-60534462<br /> 010-60531542 010-60531429</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="container container-fixed">
+				<div class="v vv">
+					<div class="v-title">
+						<a class="active" href="#room1">房间配置</a>
+						<a href="#room2">房间信息</a>
+						<a href="#room3">周边配套</a>
+						<a href="#room4">服务特色</a>
+					</div>
+				</div>
+			</div>
+			<div class="container" id="room1">
+				<div class="v v2">
+					<h1>房间配置</h1>
+					<div class="v-room">
+						<div class="goods-list">
+							<ul>
+								<li>
+									<i class="bed"></i>
+									<p>床</p>
+								</li>
+								<li>
+									<i class="wardrobe"></i>
+									<p>衣柜</p>
+								</li>
+								<li>
+									<i class="desk"></i>
+									<p>电脑桌</p>
+								</li>
+								<li>
+									<i class="chair"></i>
+									<p>椅子</p>
+								</li>
+								<li class="no">
+									<i class="TV no-sku"></i>
+									<p>电视</p>
+								</li>
+								<li>
+									<i class="fridges"></i>
+									<p>冰箱</p>
+								</li>
+								<li>
+									<i class="washer"></i>
+									<p>洗衣机</p>
+								</li>
+								<li class="no">
+									<i class="air no-sku"></i>
+									<p>空调</p>
+								</li>
+								<li class="no">
+									<i class="gas no-sku"></i>
+									<p>燃气</p>
+								</li>
+								<li class="no">
+									<i class="heater no-sku"></i>
+									<p>热水器</p>
+								</li>
+								<li class="no">
+									<i class="lock no-sku"></i>
+									<p>智能锁</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$(function(){
+					$('.v-title a').click(function(){
+						$(this).addClass('active').siblings('a').removeClass('active')
+						$("html, body").animate({
+					      scrollTop: $($(this).attr("href")).offset().top -110 + "px"
+					    }, {
+					      duration: 500,
+					      easing: "swing"
+					    });
+					    return false;
+					    
+					})
+					var top = $('.vv').offset().top
+					console.log(top)
+					$(window).scroll(function(){
+						var offsetTop = $(window).scrollTop()
+						console.log(offsetTop)
+						if(offsetTop>top){
+							$('.container-fixed').addClass('pos')
+							
+						}else{
+							$('.container-fixed').removeClass('pos')
+							
+						}
+					})
+				})
+			</script>
+		
+		
+			<div class="container" id="room2">
+				<div class="v v3">
+					<div class="v3-hd">
+						<div class="r1">房间</div>
+						<div class="">户型</div>
+						<div class="">面积</div>
+						<div class="">朝向</div>
+						<div class="">独卫</div>
+						<div class="">阳台</div>
+						<div class="r-price">价格</div>
+						<div class="r-time">可入住时间</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="v3-hd">
+						<div class="r1">A房间<span class="ra">可入住</span><a class="r-a" href="">查看详情</a></div>
+						<div class="">主卧</div>
+						<div class="">23m</div>
+						<div class="">南</div>
+						<div class="yes"></div>
+						<div class="no"></div>
+						<div class="r-price">2310元/月</div>
+						<div class="r-time">2018-07-01</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="v3-hd">
+						<div class="r1">B房间<span class="ra rb">当前房间</span></div>
+						<div class="">次卧</div>
+						<div class="">13m</div>
+						<div class="">北</div>
+						<div class="no"></div>
+						<div class="no"></div>
+						<div class="r-price">1310元/月</div>
+						<div class="r-time">2018-02-01</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="v3-hd">
+						<div class="r1">C房间<span class="ra rc">已出租</span></div>
+						<div class="">主卧</div>
+						<div class="">20m</div>
+						<div class="">南</div>
+						<div class="yes"></div>
+						<div class="yes"></div>
+						<div class="r-price">1110元/月</div>
+						<div class="r-time">--</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		
+		
+			<div class="container" id="room3">
+				<div class="v v2 v4">
+					<h1>房间配置</h1>
+					<div class="v-room">
+						1：临河里地铁站旁 方恒东景北 华业东方玫瑰空调卧室。环境优雅，周围紧邻地铁，公交四通八达便利出门。如807路 435路 316路 372路 668路等多路线。地铁八通线*直达国贸。<br />
+						2：小区周围生活设施齐全，商圈成熟，有大型购物中心，，及菜市场，生活非常便利。<br />
+						3:   房子户型：精装修，保您住的舒心、安心、顺心，室内采光足，整体干净清爽，家电齐全，南北通透朝向，温馨家园，值得您拥有。<br />
+						4:   随时可看房，拎包可入住。 <br />
+						周边信息：七色光、梨园中心、新城东里。<br />
+						中  学：梨园、北京中医、潞河、运河、通州育才中、通州运河。<br />
+						大  学：北京现代音乐、物资。商  场：苏宁电器、物美、*城、贵友大厦，蓝岛大厦，云景里商业街。医  院：北京市二建、潞河、通州中、仁爱门诊、263。邮  局：运河大街邮政支局。银  行：中国工商银行、中国建设银行、北京银行、中国银行。<br />
+						其  他：亚太国际酒店、全聚德、青年餐厅、小肥羊。 公司现有大量房源二十时竭诚为您服务
+
+					</div>
+				</div>
+			</div>
+		
+		
+			<div class="c" id="room4">
+				<div class="container">
+					<div>
+						<img src="images/b1.png">
+						<p>押一付一，无中介费经济<br>快捷租房体验</p>
+					</div>
+					<div>
+						<img src="images/b2.png">
+						<p>精致装修，全新家电时尚<br>有品生活环境</p>
+					</div>
+					<div>
+						<img src="images/b3.png">
+						<p>24小时维修，定期保洁标准<br>贴心服务体系</p>
+					</div>
+					<div>
+						<img src="images/b4.png">
+						<p>真诚服务，客户第一<br>400-667-7770</p>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+
+		
+		<div class="d">
+			<div class="container">
+				<div>
+					<img class="pull-left" src="images/kf.png" />
+					<div class="d-box">
+						<p>010-60534862&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;010-60534462</p>
+						<p>010-60531542&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;010-60531429</p>
+						<p class="text-center">欢迎致电咨询，每天9:00-18:00</p>
+					</div>
+					<div class="pull-right">
+						<a href="lxwm.html#ly" class="zixun">租房更简单，立即咨询</a>
+						<p class="text-center">小家联行提供专业咨询，准确房源</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="e">
+			<div class="container">
+				<div class="e-box">
+					<img src="images/logo-bottom.png" />
+					<div>
+						<a href="about.html">关于我们</a><span>|</span>
+						<a href="fyxx.html">房源信息</a><span>|</span>
+						<a href="lxwm.html">招贤纳士</a><span>|</span>
+						<a href="gjfw.html">管家服务</a><span>|</span>
+						<!--<a href="">客娱生活</a><span>|</span>-->
+						<a href="news.html">新闻资讯</a><span>|</span>
+						<a href="lxwm.html">联系我们</a>
+						<div class="clearfix"></div>
+					</div>
+					<p><img src="images/sh.png" /><span>售后服务：400-6777-770</span></p>
+					<p><img src="images/sh2.png" /><span>售后时间：9:00-18:00</span></p>
+				</div>
+				<div class="f-box">
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g">
+
+		</div>
+		<footer>
+			<div class="container">
+				<p>© 2018 小家联行 京ICP备17058242号-1<br /> 小家联行房地产经纪（北京）有限公司 版权所有 | 地址：北京市通州区温榆河西街榆西一街金融街园中园五号院37栋 </p>
+			</div>
+		</footer>
+		<div class="float">
+			<div class="relative">
+				<img class="x" src="images/float-x.png" />
+			</div>
+		</div>
+		<div class="float2">
+			<img src="images/float-b.png" />
+		</div>
+	</body>
+
+</html>

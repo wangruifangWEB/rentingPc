@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/swiper.css" />
+		<link rel="stylesheet" href="css/basic_style.css" />
+		<link rel="stylesheet" href="css/my_style.css" />
+		<link rel="shortcut icon" href=""/>	
+		<script  type="text/javascript" src="js/jquery1.42.min.js" ></script>
+		<script  type="text/javascript" src="js/swiper.min.js" ></script>
+		<script  type="text/javascript" src="js/my_js.js" ></script>
+		<title>标题</title>
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<div class="container container-tell">
+				<div class="pull-left cc">
+					<span class="city">北京</span>
+					<div class="city-box">
+						<a href="index.html">天津</a>
+						<a href="index.html">河北</a>
+						<a href="index.html">河南</a>
+					</div>
+				</div>
+				<div class="pull-right">
+					<div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+						<div class="tel">
+							<img src="images/a (4).png" />
+							<span>租房热线：010-60534862</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container absolute">
+				<a href="index.html" class="pull-left logo">
+					<img src="images/logo.png" />
+				</a>
+				<div class="pull-right">
+					<a class="active" href="index.html">首页</a>
+					<a href="fyxx.html">房源信息</a>
+					<!--<a href="">客娱生活</a>-->
+					<a href="gjfw.html">管家服务</a>
+					<a href="news.html">新闻资讯</a>
+					<a href="about.html">关于我们</a>
+					<div class="form">
+						<form action="">
+							<input type="text" placeholder="请输入搜索的内容" />
+							<button type="submit"></button>
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+		<!--轮播图-->
+		<div class="banner">
+			<div class="swiper-container swiper-container1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" style="background-image: url(images/banner.png);">
+						
+					</div>
+					<div class="swiper-slide" style="background-image: url(images/banner.png);">
+						
+					</div>
+					<div class="swiper-slide" style="background-image: url(images/banner.png);">
+						
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="search">
+					<form action="">
+						<input type="text" name="" placeholder="输入区域、地铁、小区名" value="" />
+						<button type="submit">
+							<img src="images/search.png" />
+							<span>搜索</span>
+						</button>
+						<div class="hot">
+							<span>热门搜索：</span>
+							<a href="fyxq.html">草房地铁站 </a>
+							<a href="fyxq.html">望京</a>
+							<a href="fyxq.html">亚运村</a>
+							<a href="fyxq.html">西直门</a>
+							<a href="fyxq.html">一居室</a>
+							<a href="fyxq.html">东风北桥</a>
+							<a href="fyxq.html">立水桥</a>
+							<a href="fyxq.html">两居室</a>
+							<a href="fyxq.html">高层</a>
+							<a href="fyxq.html">多层</a>
+						</div>
+					</form>
+				</div>
+				<div class="swiper-pagination swiper-pagination1"></div>
+			</div>
+		</div>
+		<script>
+			var mySwiper = new Swiper('.swiper-container1', {
+				loop: true,
+				//autoplay : 3000,
+				pagination: '.swiper-pagination1',
+				speed: 800,
+				paginationClickable :true,
+			});
+			
+		</script>
+		
+		<!--栏目一-->
+		<div class="column">
+			<div class="container">
+				<div class="title-box">
+					<img class="pull-left" src="images/Boutique housing.png"/>
+					<div class="">
+						<span></span>
+						<i></i>
+					</div>
+					<a class="more" href="fyxq.html">Read More</a>
+				</div>
+				<div class="boutique-box">
+					<a href="fyxq.html" class="">
+						<div class="swiper-container swiper-container2">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a1.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a2.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination2"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+						
+					</a>
+					
+					<a href="fyxq.html" class="n-m">
+						<div class="swiper-container swiper-container3">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a3.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a1.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination3"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+					</a>
+					<a href="fyxq.html" class="">
+						<div class="swiper-container swiper-container4">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a2.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a3.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination4"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+					</a>
+					<a href="fyxq.html" class="">
+						<div class="swiper-container swiper-container5">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a3.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a1.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination5"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+					</a>
+					<a href="fyxq.html" class="n-m">
+						<div class="swiper-container swiper-container6">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a2.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a1.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination6"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+					</a>
+					<a href="fyxq.html" class="">
+						<div class="swiper-container swiper-container7">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="images/a1.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="images/a3.png" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination7"></div>
+						<div class="boutique-text">
+							<h3>草房地铁站-像素-次卧</h3>
+							<p>北京市朝阳区草房</p>
+						</div>
+						
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		<script>
+			var mySwiper2 = new Swiper('.swiper-container2', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination2',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+			
+			});
+			var mySwiper3 = new Swiper('.swiper-container3', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination3',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+
+			});
+			var mySwiper4 = new Swiper('.swiper-container4', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination4',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+
+			});
+			var mySwiper5 = new Swiper('.swiper-container5', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination5',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+
+			});
+			var mySwiper6 = new Swiper('.swiper-container6', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination6',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+
+			});
+			var mySwiper6 = new Swiper('.swiper-container7', {
+				loop: true,
+				autoplay : 800,
+				pagination: '.swiper-pagination7',
+				speed: 800,
+				paginationClickable :true,
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				}
+
+			});
+		
+
+		</script>
+		
+		
+		
+		<div class="column">
+			<div class="container">
+				<div class="life">
+					<div class="title-box">
+						<img class="pull-left" src="images/Environment show.png"/>
+						<div class="">
+							<span></span>
+							<i></i>
+						</div>
+						<a class="more" href="hjzs.html">Read More</a>
+					</div>
+					<div class="left-box">
+						
+							<div class="swiper-container swiper-container8">
+								<div class="swiper-wrapper">
+									<a href="hjzs.html" class="swiper-slide">
+										<img src="images/hj1.jpg" />
+									</a>
+									<a href="hjzs.html" class="swiper-slide">
+										<img src="images/hj2.jpg" />
+									</a>
+									<a href="hjzs.html" class="swiper-slide">
+										<img src="images/hj2.jpg" />
+									</a>
+									<a href="hjzs.html" class="swiper-slide">
+										<img src="images/hj2.jpg" />
+									</a>
+								</div>
+							</div>
+							<div class="swiper-pagination swiper-pagination8"></div>
+												
+					</div>
+				</div>
+				
+				<div class="new">
+					<div class="title-box">
+						<img class="pull-left" src="images/News information.png"/>
+						<div class="">
+							<span></span>
+							<i></i>
+						</div>
+						<a class="more" href="news.html">Read More</a>
+					</div>
+					<div class="new-box">
+						<ul>
+							<li>
+								<a href="news2.html">大家眼中的小家联行</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">小家联行成功举办第一期经理培训班</a>
+							</li>
+						</ul>	
+						<ul>
+							<li>
+								<a href="news2.html">小家联行房地产经纪有限公司与中国建行携手...</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">小家联行感恩行-温暖小家，有你有我</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">专访小家联行创始人张峥赵洋</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">小家联行成功举办第一期经理培训班</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">专访小家联行创始人</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="news2.html">大家眼中的小家联行</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var mySwiper8 = new Swiper('.swiper-container8', {
+				loop: true,
+				autoplay : 3000,
+				slidesPerView : 2,
+				pagination: '.swiper-pagination8',
+				speed: 800,
+				paginationClickable :true,
+				
+			
+			});
+		</script>
+		
+
+		<div class="column about">
+			<div class="container">
+				<div class="title-box">
+					<img class="pull-left" src="images/About us.png"/>
+					<div class="">
+						<span></span>
+						<i></i>
+					</div>
+					<a class="more" href="about.html">Read More</a>
+				</div>
+				<div class="about-box">
+					<a href="about.html" class="big-box">
+						<img src="images/a.png" />
+						<p>小家联行房地产经纪（北京）有限公司</p>
+					</a>
+					<div class="small-box">
+						<a href="about.html" class="one">
+							<img src="images/q8.png" />
+							<p>企业必须有坚定的信念与明确的发展方向</p>
+						</a>
+						<a href="about.html">
+							<img src="images/aq.png" />
+							<p>有诚信是促进企业内外有效共同的桥梁</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="c">
+			<div class="container">
+				<div>
+					<img src="images/b1.png" />
+					<p>押一付一，无中介费经济<br />快捷租房体验</p>
+				</div>
+				<div>
+					<img src="images/b2.png" />
+					<p>精致装修，全新家电时尚<br />有品生活环境</p>
+				</div>
+				<div>
+					<img src="images/b3.png" />
+					<p>24小时维修，定期保洁标准<br />贴心服务体系</p>
+				</div>
+				<div>
+					<img src="images/b4.png" />
+					<p>真诚服务，客户第一<br />400-667-7770</p>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="d">
+			<div class="container">
+				<div>
+					<img class="pull-left" src="images/kf.png" />
+					<div class="d-box">
+						<p>010-60534862&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;010-60534462</p>
+						<p>010-60531542&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;010-60531429</p>
+						<p class="text-center">欢迎致电咨询，每天9:00-18:00</p>
+					</div>
+					<div class="pull-right">
+						<a href="lxwm.html#ly" class="zixun">租房更简单，立即咨询</a>
+						<p class="text-center">小家联行提供专业咨询，准确房源</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="e">
+			<div class="container">
+				<div class="e-box">
+					<img src="images/logo-bottom.png" />
+					<div>
+						<a href="about.html">关于我们</a><span>|</span>
+						<a href="fyxx.html">房源信息</a><span>|</span>
+						<a href="lxwm.html">招贤纳士</a><span>|</span>
+						<a href="gjfw.html">管家服务</a><span>|</span>
+						<!--<a href="">客娱生活</a><span>|</span>-->
+						<a href="news.html">新闻资讯</a><span>|</span>
+						<a href="lxwm.html">联系我们</a>
+						<div class="clearfix"></div>
+					</div>
+					<p><img src="images/sh.png" /><span>售后服务：400-6777-770</span></p>
+					<p><img src="images/sh2.png" /><span>售后时间：9:00-18:00</span></p>
+				</div>
+				<div class="f-box">
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+					<div class="text-center">
+						<p>小家联行官方微博</p>
+						<img src="images/ewm.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g">
+
+		</div>
+		<footer>
+			<div class="container">
+				<p>© 2018    小家联行    京ICP备17058242号-1<br />
+小家联行房地产经纪（北京）有限公司 版权所有   |  地址：北京市通州区温榆河西街榆西一街金融街园中园五号院37栋    </p>
+			</div>
+		</footer>
+		<div class="float">
+			<div class="relative">
+				<img class="x" src="images/float-x.png" />
+			</div>
+		</div>
+		<div class="float2">
+			<img src="images/float-b.png" />
+		</div>
+	</body>
+</html>	
